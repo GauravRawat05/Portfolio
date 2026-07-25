@@ -24,6 +24,41 @@ An interactive, high-performance 3D developer portfolio built with **Vue 3, Thre
 
 ---
 
+## 🛠️ Customizations & Enhancements Made
+
+Here is a breakdown of custom features and enhancements integrated into this portfolio:
+
+### 1. 🖼️ Selected Projects Section & 3D Previews
+- **Custom 3D Thumbnails**: Generated custom 3D isometric claymorphism project thumbnails for **DevMind**, **MoreTrendz**, and **SurveyBuilder**.
+- **Project Expansion**: Added custom project pages with tech stack tags, detailed descriptions, and GitHub repository links.
+
+### 2. 💼 Work Experience & Academics
+- **Athenura India Internship**: Updated position to *Full Stack Developer Intern* (Noida Sec 62) with an expandable card detailing key projects (Task Management System, LMS) and repository links.
+- **Academic Progression**: Featured **MCA Joint Program (IIT Patna & IIIT Ranchi)**.
+- **Credly Integration**: Integrated a direct Credly verification badge button for the *IBM AI-Enabled Applications* certification.
+
+### 3. 🖥️ Interactive CLI Terminal Improvements
+- **Focus & Interaction**: Window click-to-focus for command typing and hidden scrollbars for clean presentation.
+- **Scroll Isolation**: Applied `data-lenis-prevent` and `@wheel.stop` to isolate internal CLI scrolling from the main webpage.
+- **Audio Feedback**: Mechanical keypress sound triggers on CLI input typing.
+
+### 4. 🔊 Comprehensive Audio System (Howler.js)
+- **Default Sound State**: Configured audio engine to default to **ON** with smooth AudioContext unlocking on first user interaction.
+- **Preloaded Assets**: Eagerly preloaded click sounds and sprite sound effects (`keyboard`, `room`, `contact`).
+- **Interactive Triggers**: Mechanical click sound on buttons/links and keypress audio during typing.
+
+### 5. 📬 Telegram Contact Form & Vercel API
+- **Glassmorphism Form**: Clean contact form with input fields for Name, Email, and Message.
+- **Vercel Serverless Route**: `/api/contact.js` proxy function to route form submissions safely to Telegram Bot API without exposing secrets.
+- **Interactive Button**: Dynamic button state ("Send Message" ➔ Spinner ➔ "Sent →" green state with 5s auto-reset).
+
+### 6. 🎨 Header, Footer & UX Adjustments
+- **Navigation & Layout**: Moved **Resume Download** button to the top-left header with the 3D Cube Logo positioned underneath.
+- **Preloader Fix**: Fixed SVG flash on page reload using inline style bounds.
+- **Footer Cleanup**: Removed legacy links (Privacy Notice / Language switcher) and updated copyright info.
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: Vue 3 (Composition API), TypeScript, SCSS
