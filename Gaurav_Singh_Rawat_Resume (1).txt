@@ -1,0 +1,103 @@
+GAURAV SINGH RAWAT
+Full Stack Developer Intern | MERN & Modern Web Stacks | AI Integration
+Faridabad, Haryana | +91 9319810682 | itsgauravrawat2005@gmail.com
+LinkedIn: linkedin.com/in/gauravsinghrawat1310
+GitHub: github.com/GauravRawat05
+Portfolio: gsr-portfolio.vercel.app
+
+================================================================================
+SUMMARY
+================================================================================
+Full Stack Developer Intern at Athenura, contributing backend development
+across live production projects (MongoDB, Node.js, JWT) and gaining hands-on
+QA exposure. Builds independent projects spanning multi-agent AI systems
+(LangGraph, FastAPI) and full-stack e-commerce (Node.js, Razorpay). IBM AI
+Certified.
+
+================================================================================
+TECHNICAL SKILLS
+================================================================================
+Frontend:       React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind
+                CSS, HTML5/CSS3
+Backend:        Node.js, Express.js, FastAPI, Hono (Cloudflare Workers), REST
+                APIs, JWT Auth, RBAC
+Database:       MongoDB, PostgreSQL, Cloudflare D1, ChromaDB (Vector DB)
+AI / Agentic:   LangGraph, LLM Integration (Groq/Llama-3), RAG Pipelines,
+                Sentence-Transformers
+Tools:          Git, GitHub, Docker, Vercel, Cloudflare Workers, Postman,
+                CI/CD
+
+================================================================================
+EXPERIENCE
+================================================================================
+Full Stack Developer Intern — Athenura India              Feb 2026 – Present
+Faridabad | React.js, Node.js, Express.js, MongoDB
+
+- Contribute backend development across live production projects; spent one
+  month embedded in the QA team, testing features and reporting issues
+  across active projects.
+- Lead Management System: Joined the project mid-build as backend
+  developer, delivering the majority of backend logic (REST APIs, JWT auth,
+  MongoDB schemas) alongside one other backend teammate — 112 commits,
+  deployed to Vercel.
+- Task Management System: Led a 2-person team building a 4-tier RBAC system
+  (Admin, Manager, Lead, Member) with CSV bulk user import — 60 commits.
+
+Technical Team Member — Code Catalyst                     Aug 2025 – Feb 2026
+Faridabad
+
+- Led technical workshops on MERN stack development for peer students.
+- Conducted code reviews across peer projects to support code quality
+  improvements.
+
+================================================================================
+PROJECTS
+================================================================================
+DevMind — Multi-Agent Code Intelligence Platform
+Stack: Next.js, FastAPI, LangGraph, Celery, Redis, ChromaDB, PostgreSQL,
+       MongoDB, Docker
+GitHub: github.com/GauravRawat05/DevMind
+
+- Built a 4-agent pipeline (Doc, Review, Q&A, Analytics) that analyzes
+  GitHub repositories in parallel using LangGraph state graphs and
+  Groq/Llama-3.
+- Designed an async job architecture with Celery + Redis pub/sub and
+  real-time WebSocket progress streaming to the frontend.
+- Implemented RAG-based codebase Q&A using ChromaDB vector indexing with
+  sentence-transformer embeddings.
+
+MoreTrendz — E-Commerce Platform
+Stack: Node.js, Express.js, MongoDB, JWT, Razorpay, Google APIs
+GitHub: github.com/GauravRawat05/moretrendz-website
+
+- Built a full-stack e-commerce platform (68 commits) with a
+  JWT-authenticated admin dashboard for full order and product CRUD.
+- Integrated Razorpay payment gateway and Google Analytics/Search Console
+  APIs for conversion tracking.
+- Implemented security middleware (rate limiting, input sanitization,
+  Helmet) and an automated email notification service.
+
+Branded Survey Builder — Technical Assessment Project
+Stack: Hono, Cloudflare Workers, D1, React, TanStack Router, TypeScript
+GitHub: github.com/GauravRawat05/sde-intern-task
+
+- Built a full-stack survey builder with drag-and-drop question ordering
+  (3+ question types), per-survey branding, and public anonymous response
+  collection.
+- Designed a normalized Cloudflare D1 schema (users, surveys, questions,
+  responses, answers) evolved through iterative migrations for auth,
+  publishing state, and theming.
+
+================================================================================
+CERTIFICATIONS
+================================================================================
+IBM AI-Enabled Applications for Customer Service — IBM via Credly | Mar 2026
+
+================================================================================
+EDUCATION
+================================================================================
+Bachelor of Computer Applications (BCA)                    2023 – 2026 (Expected)
+Maharshi Dayanand University, Faridabad
+
+Class 12th — Commerce with Maths (74%)                     2023
+Jaypee Public School, Faridabad

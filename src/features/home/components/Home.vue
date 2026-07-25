@@ -4,6 +4,9 @@ import Hero from "./Hero.vue";
 import About from "./About.vue";
 //import AboutSections from "../features/about/Sections.vue";
 import Projects from "./Projects.vue";
+import Experience from "./Experience.vue";
+import Education from "./Education.vue";
+import CliTerminal from "./CliTerminal.vue";
 import Contact from "./Contact.vue";
 import Footer from "../../../components/Footer.vue";
 import { ref, onMounted, onUnmounted, watchEffect, computed, watch } from "vue";
@@ -158,6 +161,9 @@ watch(
         <div class="about-spacer" ref="aboutSpacerRef" id="about"></div>
       </div>
       <Projects id="projects" @loaded="handleProjectsLoaded" />
+      <Experience id="experience" v-if="projectsLoaded" />
+      <Education id="education" v-if="projectsLoaded" />
+      <CliTerminal id="terminal" v-if="projectsLoaded" />
       <div ref="contactRef" class="home-contact">
         <Contact id="contact" v-if="projectsLoaded" />
       </div>

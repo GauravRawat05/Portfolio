@@ -1,47 +1,26 @@
-import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
-import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
-//import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
-import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
-import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
-import thumbnailStreakon from "../../../assets/thumbnails/streakon.webp";
+import thumbnailDevMind from "../../../assets/thumbnails/devmind.png";
+import thumbnailMoreTrendz from "../../../assets/thumbnails/moretrendz.png";
+import thumbnailSurveyBuilder from "../../../assets/thumbnails/surveybuilder.png";
 
 import type { ProjectPreview } from "../../types";
 
 export default [
   {
-    title: "StreakOn",
-    slug: "streakon",
-    thumbnail: thumbnailStreakon,
-    description: "Social habit tracking app",
+    title: "DevMind",
+    slug: "devmind",
+    thumbnail: thumbnailDevMind,
+    description: "Multi-Agent Code Intelligence Platform",
   },
   {
-    title: "CubeWar",
-    slug: "cubewar",
-    thumbnail: thumbnailCubeWar,
-    description: "Multiplayer strategy game",
+    title: "MoreTrendz",
+    slug: "moretrendz",
+    thumbnail: thumbnailMoreTrendz,
+    description: "Full-Stack E-Commerce Platform",
   },
   {
-    title: "Quibbo",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "Multiplayer gaming platform",
-  },
-  {
-    title: "Sharkie",
-    slug: "sharkie",
-    thumbnail: thumbnailSharkie,
-    description: "2D adventure game",
-  },
-  /**  {
-    title: "WebGL Particles",
-    slug: "particles",
-    thumbnail: thumbnailParticles,
-    description: "Dynamic 3D particles",
-  }, */
-  {
-    title: "Pokédex",
-    slug: "pokedex",
-    thumbnail: thumbnailPokedex,
-    description: "Open-source learning project",
+    title: "SurveyBuilder",
+    slug: "surveybuilder",
+    thumbnail: thumbnailSurveyBuilder,
+    description: "Cloudflare Edge Survey Engine",
   },
 ] as const satisfies ProjectPreview[];

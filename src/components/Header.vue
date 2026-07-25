@@ -34,8 +34,6 @@ const { isDarkTheme } = useHeaderTheme({
 });
 
 const handleBackClick = () => {
-  // If it's the first route the user visited, navigate to home
-  // Otherwise, go back in browser history
   if (isFirstRoute.value) {
     router.push("/");
   } else {
@@ -80,21 +78,38 @@ const getInTouchClassNames = computed(() => {
       >
         <ArrowRight class="header-back-icon" />
       </ButtonRound>
+
+      <div class="header-left-group" v-else>
+        <Button
+          renderAs="a"
+          variant="accent"
+          aria-label="Download Resume"
+          href="/Gaurav_Singh_Rawat_Resume.txt"
+          download
+          class="header-resume-btn"
+          data-cursor="circle-white"
+          data-sound="click"
+          data-hoversound="hover"
+          >Resume</Button
+        >
+
+        <div
+          :class="{
+            'header-logo': true,
+            'header-logo-isProjectPage': projectId !== null,
+            'header-logo-clickable': scrolledPastHeroVisible,
+            'children-unclickable': true,
+          }"
+          @click="handleLogoClick"
+          data-sound="click"
+          data-hoversound="hover"
+          data-cursor="circle-white"
+        >
+          <Logo class="header-logo-image" />
+        </div>
+      </div>
     </div>
-    <div
-      :class="{
-        'header-logo': true,
-        'header-logo-isProjectPage': projectId !== null,
-        'header-logo-clickable': scrolledPastHeroVisible,
-        'children-unclickable': true,
-      }"
-      @click="handleLogoClick"
-      data-sound="click"
-      data-hoversound="hover"
-      data-cursor="circle-white"
-    >
-      <Logo class="header-logo-image" />
-    </div>
+
     <div class="header-right">
       <Button
         renderAs="a"
@@ -104,6 +119,7 @@ const getInTouchClassNames = computed(() => {
         external
         :class="getInTouchClassNames"
         data-cursor="circle-white"
+        data-sound="click"
         data-hoversound="hover"
         >{{ t("get-in-touch") }}</Button
       >
@@ -155,8 +171,20 @@ const getInTouchClassNames = computed(() => {
   &-left {
     position: absolute;
     left: var(--space-outer);
-    top: 50%;
-    transform: translateY(-50%);
+    top: var(--space-md);
+    pointer-events: auto;
+    display: flex;
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+
+  &-resume-btn {
+    pointer-events: auto;
   }
 
   &-get-in-touch {
@@ -170,8 +198,7 @@ const getInTouchClassNames = computed(() => {
   &-right {
     position: absolute;
     right: var(--space-outer);
-    top: 50%;
-    transform: translateY(-50%);
+    top: var(--space-md);
     pointer-events: auto;
     display: flex;
     align-items: center;
@@ -199,7 +226,7 @@ const getInTouchClassNames = computed(() => {
     cursor: pointer;
     display: flex;
     gap: var(--space-xs);
-    transition: color 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
     opacity: var(--scrolled);
     pointer-events: none;
 
@@ -218,19 +245,10 @@ const getInTouchClassNames = computed(() => {
     }
 
     &-image {
-      width: 36px;
+      width: 32px;
 
       @include mixins.mq("md") {
-        width: 40px;
-      }
-    }
-
-    &-text {
-      font-weight: 900;
-      font-size: 18px;
-
-      @include mixins.mq("md") {
-        font-size: 20px;
+        width: 36px;
       }
     }
   }

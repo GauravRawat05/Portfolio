@@ -13,48 +13,46 @@ import { getSoundsHowl } from "../utils/sounds";
 import type { SoundKey } from "../types";
 
 export const howlerUnlocked = ref(false);
-export const soundsEnabled = ref(false);
+export const soundsEnabled = ref(true);
 
-Howler.volume(0);
+// Start with volume 1 so sounds work on first interaction
+Howler.volume(1);
 
 export const useHowler = () => {
   const { isTouch } = useAgent();
-  const enabledVolume = ref<number>(0);
+  const enabledVolume = ref<number>(1);
 
   const handleUnlocked = () => {
     howlerUnlocked.value = true;
 
-    // Disable sounds completely on touch devices
     if (isTouch.value) {
       soundsEnabled.value = false;
       return;
     }
 
-    const storeItem = localStorage.getItem("portfolio-soundsEnabled");
-    if (storeItem) {
-      soundsEnabled.value = storeItem === "true";
-    } else {
-      soundsEnabled.value = true;
-      localStorage.setItem("portfolio-soundsEnabled", "true");
-    }
+    soundsEnabled.value = true;
+    localStorage.setItem("portfolio-soundsEnabled", "true");
   };
 
   const tick = () => {
     if (!howlerUnlocked.value) {
-      if (Howler.ctx.state !== "running") return;
-      handleUnlocked();
-    } else if (!isTouch.value) {
-      // Only process sounds on non-touch devices
-      contactTick();
-      roomTick();
-
-      const currentVolume = Howler.volume();
-      if (currentVolume > 0.99 && enabledVolume.value === 1) {
-        return;
+      if (Howler.ctx && Howler.ctx.state === "running") {
+        handleUnlocked();
       }
-      const speed = enabledVolume.value === 1 ? 0.01 : 0.05;
-      Howler.volume(lerp(currentVolume, enabledVolume.value, speed));
+      return;
     }
+
+    if (isTouch.value) return;
+
+    contactTick();
+    roomTick();
+
+    const currentVolume = Howler.volume();
+    if (currentVolume > 0.99 && enabledVolume.value === 1) {
+      return;
+    }
+    const speed = enabledVolume.value === 1 ? 0.01 : 0.05;
+    Howler.volume(lerp(currentVolume, enabledVolume.value, speed));
   };
 
   const handleVisibilityChange = () => {
@@ -84,11 +82,10 @@ export const useHowler = () => {
 
   onMounted(() => {
     if (!isFeatureEnabled("sounds")) return;
-    Howler.volume(0);
 
-    if (howlerUnlocked.value) {
-      soundsEnabled.value = localStorage.getItem("portfolio-soundsEnabled") === "true";
-    }
+    // Keep volume at 1, sounds are ON by default
+    Howler.volume(1);
+    enabledVolume.value = 1;
 
     gsap.ticker.add(tick);
     window.addEventListener("visibilitychange", handleVisibilityChange);

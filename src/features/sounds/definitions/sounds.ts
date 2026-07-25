@@ -10,7 +10,7 @@ import soundClick from "../../../assets/sounds/click.mp3";
 
 export const sounds = {
   bird: { spriteKey: "room", name: "bird" },
-  click: { howl: new Howl({ src: [soundClick], loop: false, volume: 1, preload: false }) },
+  click: { howl: new Howl({ src: [soundClick], loop: false, volume: 1, preload: true }) },
   gasp: { spriteKey: "contact", name: "gasp" },
   //hover0: { howl: new Howl({ src: [soundHover0], loop: false, volume: 0.05, preload: false }) },
   //hover1: { howl: new Howl({ src: [soundHover1], loop: false, volume: 0.05, preload: false }) },

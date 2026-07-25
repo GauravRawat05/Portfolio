@@ -12,19 +12,21 @@ const handleLinkClick = (link: string) => {
   lenis.value.scrollTo(link);
 };
 
-type ActiveLink = "about" | "projects" | "contact";
+type ActiveLink = "about" | "projects" | "experience" | "education" | "terminal" | "contact";
 const activeLink = ref<ActiveLink | null>(null);
-const sections: ActiveLink[] = ["about", "projects", "contact"];
-const ariaLabels = {
+const sections: ActiveLink[] = ["about", "projects", "experience", "education", "terminal", "contact"];
+const ariaLabels: Record<string, string> = {
   about: t("about"),
   projects: t("projects"),
+  experience: "Experience",
+  education: "Education",
+  terminal: "Terminal",
   contact: t("contact"),
 };
 
 const isMounted = ref(false);
-
 const barStyle = ref({ transform: "" });
-const ITEM_WIDTH = 128;
+const ITEM_WIDTH = 110;
 
 const { isDarkTheme, hasScrolledIntoView } = useHeaderTheme();
 
@@ -56,7 +58,6 @@ onMounted(() => {
   });
 
   ScrollTrigger.refresh();
-
   isMounted.value = true;
 });
 </script>
@@ -86,7 +87,7 @@ onMounted(() => {
         data-sound="click"
         data-hoversound="hover"
       >
-        {{ t(section) }}
+        {{ ariaLabels[section] || section }}
       </HeaderLink>
     </div>
   </div>
@@ -142,7 +143,7 @@ onMounted(() => {
     top: 3px;
     left: 3px;
     height: calc(100% - 6px);
-    width: 128px;
+    width: 110px;
     background: var(--color-orange-400);
     border-radius: 100px;
     transition:
@@ -169,10 +170,11 @@ onMounted(() => {
     border: none;
     background: none;
     transition: color 0.1s ease-in-out;
-    font-size: var(--font-size-md);
-    width: 128px;
+    font-size: var(--font-size-sm);
+    width: 110px;
     white-space: nowrap;
     text-transform: uppercase;
+    text-align: center;
 
     &-active {
       color: var(--color-white-400);

@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { transitions } from "../../../animations";
 import { t } from "../../../i18n/utils/translate";
 import Social from "../../../components/Social.vue";
+import ContactForm from "./ContactForm.vue";
 
 const contactElement = ref<HTMLElement | null>(null);
 
@@ -22,6 +23,10 @@ onUnmounted(() => {
     <div class="contact-content">
       <h2 class="contact-title" v-html="t('lets-work-together')"></h2>
       <Social variant="background" />
+      <div class="contact-form-section">
+        <p class="contact-form-heading">Or drop me a message directly 👇</p>
+        <ContactForm />
+      </div>
     </div>
   </div>
 </template>
@@ -33,10 +38,10 @@ onUnmounted(() => {
   overflow: hidden;
   min-height: calc(var(--lvh) * 100);
   padding: var(--space-outer);
-  padding-top: var(--space-lg);
+  padding-top: var(--space-sm);
 
   @include mixins.mq("md") {
-    padding-top: var(--space-xxl);
+    padding-top: var(--space-md);
   }
 
   &-content {
@@ -53,12 +58,12 @@ onUnmounted(() => {
 
     @include mixins.mq("md") {
       gap: var(--space-xl);
-      grid-column: 1 / 6;
+      grid-column: 1 / 8;
       padding-top: var(--space-lg);
     }
 
     @include mixins.mq("lg") {
-      grid-column: 2 / 6;
+      grid-column: 2 / 8;
     }
   }
 
@@ -75,5 +80,19 @@ onUnmounted(() => {
       font-size: var(--font-size-title-xl);
     }
   }
+}
+
+.contact-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: var(--space-sm);
+}
+
+.contact-form-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
 }
 </style>

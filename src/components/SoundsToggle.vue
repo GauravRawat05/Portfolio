@@ -4,6 +4,7 @@ import ButtonRound from "./ButtonRound.vue";
 import Volume from "./icons/Volume.vue";
 import { t } from "../i18n/utils/translate";
 import { useAgent } from "../composables/useAgent";
+import { Howler } from "howler";
 
 const { isTouch } = useAgent();
 
@@ -12,6 +13,14 @@ const props = defineProps<{
 }>();
 
 const toggleSounds = () => {
+  // Ensure AudioContext is resumed on user click
+  if (Howler.ctx && Howler.ctx.state === "suspended") {
+    Howler.ctx.resume();
+  }
+  if (!howlerUnlocked.value) {
+    howlerUnlocked.value = true;
+  }
+
   soundsEnabled.value = !soundsEnabled.value;
 };
 </script>
@@ -22,12 +31,12 @@ const toggleSounds = () => {
     variant="theme"
     :class="{ 'music-toggle': true, 'music-toggle-dark': props.isDarkTheme, 'children-unclickable': true }"
     @click="toggleSounds"
-    :aria-label="soundsEnabled && howlerUnlocked ? t('disable-sounds') : t('enable-sounds')"
+    :aria-label="soundsEnabled ? t('disable-sounds') : t('enable-sounds')"
     data-cursor="circle-white"
     data-sound="click"
     data-hoversound="hover"
   >
-    <Volume :active="soundsEnabled && howlerUnlocked" />
+    <Volume :active="soundsEnabled" />
   </ButtonRound>
 </template>
 
