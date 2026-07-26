@@ -1,6 +1,8 @@
 import { onMounted, onBeforeUnmount } from "vue";
+import { playSound } from "../utils/sounds";
 import { soundsEnabled, howlerUnlocked } from "./useHowler";
 import { Howler } from "howler";
+import type { SoundKey } from "../types";
 
 let audioContextResumed = false;
 
@@ -20,8 +22,29 @@ function ensureAudioReady(): void {
 }
 
 export function useClickSound(): void {
-  const handleClick = () => {
+  const handleClick = (e: Event) => {
     ensureAudioReady();
+
+    if (!soundsEnabled.value) return;
+
+    const target = e.target as HTMLElement | null;
+    if (!target) return;
+
+    // If element has data-sound, use that sound
+    const elWithSound = target.closest<HTMLElement>("[data-sound]");
+    if (elWithSound && elWithSound.dataset.sound) {
+      playSound(elWithSound.dataset.sound as SoundKey);
+      return;
+    }
+
+    // For any other clickable element, play click sound
+    if (
+      target.closest(
+        "button, a, [role='button'], .btn, .children-unclickable, .header-home-link, .preview-card, .experience-card, .edu-card, .cert-card, .exp-tag, .exp-repo-btn"
+      )
+    ) {
+      playSound("click");
+    }
   };
 
   const handleKeydown = () => {

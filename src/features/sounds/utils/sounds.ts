@@ -21,7 +21,7 @@ const playPoolSound = (poolKey: PoolKey) => {
 
 export const playSound = (key: SoundKey | PoolKey) => {
   if (!isFeatureEnabled("sounds")) return;
-  if (key === "click" || key === "keyboard" || key === "snore") return;
+  if (key === "keyboard" || key === "snore") return;
 
   if (key in pools) {
     playPoolSound(key as PoolKey);
