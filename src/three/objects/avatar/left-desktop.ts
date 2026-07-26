@@ -4,7 +4,6 @@ import { desktops } from "../room/desktops";
 import { sceneWeights } from "../../../animations/scenes";
 import { messagePopup } from "../room/message-popup";
 import { sizes } from "../../../utils/sizes";
-import { playSound } from "../../../features/sounds/utils/sounds";
 import { sprites } from "../../../features/sounds/definitions/sprites";
 
 let ctx: gsap.Context | null = null;
@@ -64,9 +63,10 @@ const startInterval = () => {
       currentId = undefined;
     }
 
-    tl.add(() => {
-      currentId = playSound("keyboard");
-    }, 1.6);
+    // Keyboard sound disabled per audio preference
+    // tl.add(() => {
+    //   currentId = playSound("keyboard");
+    // }, 1.6);
 
     desktops.showMessage();
     messagePopup.show();

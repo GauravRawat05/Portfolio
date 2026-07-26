@@ -3,10 +3,7 @@ import { soundsEnabled, howlerUnlocked } from "../features/sounds/composables/us
 import ButtonRound from "./ButtonRound.vue";
 import Volume from "./icons/Volume.vue";
 import { t } from "../i18n/utils/translate";
-import { useAgent } from "../composables/useAgent";
 import { Howler } from "howler";
-
-const { isTouch } = useAgent();
 
 const props = defineProps<{
   isDarkTheme: boolean;
@@ -27,7 +24,6 @@ const toggleSounds = () => {
 
 <template>
   <ButtonRound
-    v-if="!isTouch"
     variant="theme"
     :class="{ 'music-toggle': true, 'music-toggle-dark': props.isDarkTheme, 'children-unclickable': true }"
     @click="toggleSounds"

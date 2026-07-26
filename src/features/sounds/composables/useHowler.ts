@@ -4,7 +4,6 @@ import { lerp } from "../../../utils/math";
 import { Howler } from "howler";
 import { isFeatureEnabled } from "../../../utils/features";
 import { tick as contactTick } from "../core/contact";
-import { useAgent } from "../../../composables/useAgent";
 import { stopSnoreRepetition } from "../core/contact";
 import { tick as roomTick } from "../core/room";
 import { sounds } from "../definitions/sounds";
@@ -19,17 +18,10 @@ export const soundsEnabled = ref(true);
 Howler.volume(1);
 
 export const useHowler = () => {
-  const { isTouch } = useAgent();
   const enabledVolume = ref<number>(1);
 
   const handleUnlocked = () => {
     howlerUnlocked.value = true;
-
-    if (isTouch.value) {
-      soundsEnabled.value = false;
-      return;
-    }
-
     soundsEnabled.value = true;
     localStorage.setItem("portfolio-soundsEnabled", "true");
   };
@@ -41,8 +33,6 @@ export const useHowler = () => {
       }
       return;
     }
-
-    if (isTouch.value) return;
 
     contactTick();
     roomTick();
@@ -60,13 +50,13 @@ export const useHowler = () => {
   };
 
   const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.code === "KeyM" && !isTouch.value) {
+    if (event.code === "KeyM") {
       soundsEnabled.value = !soundsEnabled.value;
     }
   };
 
   watch(soundsEnabled, (newVal) => {
-    if (!isFeatureEnabled("sounds") || isTouch.value) return;
+    if (!isFeatureEnabled("sounds")) return;
     enabledVolume.value = newVal ? 1 : 0;
     localStorage.setItem("portfolio-soundsEnabled", newVal.toString());
   });
@@ -91,9 +81,7 @@ export const useHowler = () => {
     window.addEventListener("visibilitychange", handleVisibilityChange);
     window.addEventListener("keydown", handleKeyPress);
 
-    if (!isTouch.value) {
-      loadAllSounds();
-    }
+    loadAllSounds();
   });
 
   onUnmounted(() => {
