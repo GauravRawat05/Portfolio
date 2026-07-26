@@ -1,5 +1,5 @@
-import streakon0 from "../../../assets/images/projects/streakon/streakon-0.webp";
-import streakon1 from "../../../assets/images/projects/streakon/streakon-1.webp";
+import devmind0 from "../../../assets/images/projects/devmind/devmind-0.png";
+import devmind1 from "../../../assets/images/projects/devmind/devmind-1.png";
 
 import type { ProjectContent } from "../../types";
 
@@ -16,18 +16,37 @@ export default {
       type: "media",
       props: {
         type: "image",
-        src: streakon0,
+        src: devmind0,
         alt: "DevMind Architektur",
-        caption: "DevMind Architektur",
+        caption: "DevMind 4-Agenten Pipeline Architektur & AST Analyse-Knotengrafik",
+      },
+    },
+    {
+      type: "text",
+      props: {
+        title: "Multi-Agenten Intelligenz-Pipeline",
+        text: "DevMind gliedert komplexe Codebase-Analysen in vier koordinierte autonome Agenten. Jeder Agent ist auf eine bestimmte Analyse-Ebene spezialisiert – von AST-Struktur-Parsing und Sicherheitsauditierung bis zur ChromaDB-Vektorindexierung.",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: streakon1,
-        alt: "LangGraph Stream",
-        caption: "LangGraph Stream",
+        src: devmind1,
+        alt: "DevMind Dashboard",
+        caption: "DevMind Code Security Audit, RAG Vektorsuche & WebSocket Dashboard",
+      },
+    },
+    {
+      type: "list",
+      props: {
+        title: "Technologie-Stack & Infrastruktur",
+        items: [
+          "<strong>LangGraph & FastAPI:</strong> Zustandsbehaftete Multi-Agenten-Graph-Orchestrierung für sequentielles Code-Reasoning.",
+          "<strong>ChromaDB & Sentence-Transformers:</strong> Lokaler Vektorspeicher für schnelle Kontextabfrage bei Codebase-Q&A.",
+          "<strong>Celery + Redis:</strong> Verteiltes asynchrones Job-Queue-Management.",
+          "<strong>Next.js 14 & Tailwind CSS:</strong> Hochleistungs-Dashboard mit Live-Streaming.",
+        ],
       },
     },
   ],

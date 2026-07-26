@@ -1,5 +1,5 @@
-import streakon0 from "../../../assets/images/projects/streakon/streakon-0.webp";
-import streakon1 from "../../../assets/images/projects/streakon/streakon-1.webp";
+import devmind0 from "../../../assets/images/projects/devmind/devmind-0.png";
+import devmind1 from "../../../assets/images/projects/devmind/devmind-1.png";
 
 import type { ProjectContent } from "../../types";
 
@@ -16,18 +16,37 @@ export default {
       type: "media",
       props: {
         type: "image",
-        src: streakon0,
+        src: devmind0,
         alt: "DevMind Multi-Agent Architecture",
-        caption: "DevMind Multi-Agent Architecture",
+        caption: "DevMind 4-Agent Pipeline Architecture & AST Analysis Node Graph",
+      },
+    },
+    {
+      type: "text",
+      props: {
+        title: "Multi-Agent Intelligence Pipeline",
+        text: "DevMind breaks down complex codebase analysis into four coordinated autonomous agents. Each agent specializes in a specific analysis layer—ranging from AST structural parsing and security vulnerability detection to ChromaDB vector indexing and real-time WebSocket progress streaming.",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: streakon1,
-        alt: "LangGraph Pipeline Stream",
-        caption: "LangGraph Pipeline Stream",
+        src: devmind1,
+        alt: "DevMind Analytics & Vector RAG Dashboard",
+        caption: "DevMind Code Security Audit, RAG Vector Search & WebSocket Dashboard",
+      },
+    },
+    {
+      type: "list",
+      props: {
+        title: "Technical Stack & Infrastructure",
+        items: [
+          "<strong>LangGraph & FastAPI:</strong> Stateful multi-agent graph orchestrations for sequential code reasoning.",
+          "<strong>ChromaDB & Sentence-Transformers:</strong> Local vector store indexing for fast context retrieval during codebase Q&A.",
+          "<strong>Celery + Redis:</strong> Distributed asynchronous job queue management for heavy processing.",
+          "<strong>Next.js 14 & Tailwind CSS:</strong> High-performance dark-mode UI with live streaming execution status.",
+        ],
       },
     },
   ],

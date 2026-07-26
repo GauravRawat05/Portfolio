@@ -1,5 +1,5 @@
-import streakon2 from "../../../assets/images/projects/streakon/streakon-2.webp";
-import streakon3 from "../../../assets/images/projects/streakon/streakon-3.webp";
+import moretrendz0 from "../../../assets/images/projects/moretrendz/moretrendz-0.png";
+import moretrendz1 from "../../../assets/images/projects/moretrendz/moretrendz-1.png";
 
 import type { ProjectContent } from "../../types";
 
@@ -10,24 +10,43 @@ export default {
   videoBorder: false,
   live: "https://github.com/GauravRawat05/moretrendz-website",
   description:
-    "MoreTrendz ist eine Full-Stack-E-Commerce-Plattform mit JWT-authentifiziertem Admin-Dashboard für Bestell- und Produkt-CRUD.<br/><br/>Highlights:<br/>• Razorpay Payment Gateway & Google Analytics API Integration.<br/>• Sicherheits-Middleware (Rate Limiting, Helmet) und automatische E-Mails.",
+    "MoreTrendz ist eine Full-Stack-E-Commerce-Plattform mit einem JWT-authentifizierten Admin-Dashboard für vollständige Produkt- und Bestellungs-CRUD-Operationen.<br/><br/>Hauptmerkmale:<br/>• Integrierte Razorpay Payment-Gateway & Google Analytics APIs.<br/>• Automatisiertes E-Mail-Benachrichtigungssystem & Sicherheits-Middleware.",
   components: [
     {
       type: "media",
       props: {
         type: "image",
-        src: streakon2,
-        alt: "MoreTrendz E-Commerce Storefront",
-        caption: "MoreTrendz E-Commerce Storefront",
+        src: moretrendz0,
+        alt: "MoreTrendz Storefront",
+        caption: "MoreTrendz Storefront & Razorpay Payment-Integration",
+      },
+    },
+    {
+      type: "text",
+      props: {
+        title: "Full-Stack Storefront & Admin Portal",
+        text: "MoreTrendz bietet ein nahtloses Einkaufserlebnis für Nutzer sowie umfangreiche Verwaltungsmöglichkeiten für Shop-Administratoren mit skalierbarem Node.js/Express Backend und MongoDB.",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: streakon3,
+        src: moretrendz1,
         alt: "Admin Dashboard",
-        caption: "Admin Dashboard",
+        caption: "MoreTrendz Admin Bestell- & Inventar-Management Dashboard",
+      },
+    },
+    {
+      type: "list",
+      props: {
+        title: "Architektur & Sicherheitsmerkmale",
+        items: [
+          "<strong>Razorpay Payment-Integration:</strong> Sichere Checkout-Verarbeitung & Webhooks.",
+          "<strong>JWT & RBAC Sicherheit:</strong> Rollenbasierte Zugriffskontrolle für Admin-Endpunkte.",
+          "<strong>Google Analytics:</strong> API-Integrationen zur Verfolgung von Nutzeranalysen.",
+          "<strong>Automatisierter E-Mail-Dienst:</strong> Bestellbestätigungen und Statusaktualisierungen.",
+        ],
       },
     },
   ],

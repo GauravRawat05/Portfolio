@@ -1,5 +1,5 @@
-import streakon0 from "../../../assets/images/projects/streakon/streakon-0.webp";
-import streakon1 from "../../../assets/images/projects/streakon/streakon-1.webp";
+import surveybuilder0 from "../../../assets/images/projects/surveybuilder/surveybuilder-0.png";
+import surveybuilder1 from "../../../assets/images/projects/surveybuilder/surveybuilder-1.png";
 
 import type { ProjectContent } from "../../types";
 
@@ -16,18 +16,37 @@ export default {
       type: "media",
       props: {
         type: "image",
-        src: streakon0,
+        src: surveybuilder0,
         alt: "Branded Survey Editor",
-        caption: "Branded Survey Editor",
+        caption: "Branded Survey Builder Drag-and-Drop Question Editor Interface",
+      },
+    },
+    {
+      type: "text",
+      props: {
+        title: "Edge-First Survey Engine",
+        text: "Built on Cloudflare Workers and Hono, SurveyBuilder deploys instantly to global edge locations, ensuring sub-millisecond page loads for both survey creators and anonymous survey respondents across the world.",
       },
     },
     {
       type: "media",
       props: {
         type: "image",
-        src: streakon1,
-        alt: "Public Survey Response Interface",
-        caption: "Public Survey Response Interface",
+        src: surveybuilder1,
+        alt: "Cloudflare D1 Survey Analytics Dashboard",
+        caption: "Cloudflare Workers D1 Database Survey Response Analytics & Edge Metrics",
+      },
+    },
+    {
+      type: "list",
+      props: {
+        title: "Cloudflare Serverless Stack",
+        items: [
+          "<strong>Hono & Cloudflare Workers:</strong> Lightweight web framework executing on Cloudflare's global V8 isolate network.",
+          "<strong>Cloudflare D1 SQL Database:</strong> Serverless relational SQLite database storing users, surveys, questions, and responses.",
+          "<strong>TanStack Router & React:</strong> Type-safe client-side routing and interactive drag-and-drop UI.",
+          "<strong>Custom Branding Engine:</strong> Per-survey theme customization with dynamic live preview.",
+        ],
       },
     },
   ],
