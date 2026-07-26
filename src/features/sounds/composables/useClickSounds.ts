@@ -22,8 +22,15 @@ function ensureAudioReady(): void {
 }
 
 export function useClickSound(): void {
-  const handleClick = (e: Event) => {
+  let lastClickTime = 0;
+
+  const handleClick = (e: MouseEvent) => {
     ensureAudioReady();
+
+    // Prevent duplicate click sound within 150ms
+    const now = Date.now();
+    if (now - lastClickTime < 150) return;
+    lastClickTime = now;
 
     if (!soundsEnabled.value) return;
 
@@ -47,22 +54,22 @@ export function useClickSound(): void {
     }
   };
 
-  const handleKeydown = () => {
+  const handleTouchOrPointer = () => {
     ensureAudioReady();
   };
 
   onMounted(() => {
     // Use capture phase so we fire before anything else
     window.addEventListener("click", handleClick, { capture: true });
-    window.addEventListener("keydown", handleKeydown, { capture: true });
-    window.addEventListener("touchstart", handleClick, { capture: true, passive: true });
-    window.addEventListener("pointerdown", handleClick, { capture: true, passive: true });
+    window.addEventListener("keydown", handleTouchOrPointer, { capture: true });
+    window.addEventListener("touchstart", handleTouchOrPointer, { capture: true, passive: true });
+    window.addEventListener("pointerdown", handleTouchOrPointer, { capture: true, passive: true });
   });
 
   onBeforeUnmount(() => {
     window.removeEventListener("click", handleClick, { capture: true });
-    window.removeEventListener("keydown", handleKeydown, { capture: true });
-    window.removeEventListener("touchstart", handleClick, { capture: true });
-    window.removeEventListener("pointerdown", handleClick, { capture: true });
+    window.removeEventListener("keydown", handleTouchOrPointer, { capture: true });
+    window.removeEventListener("touchstart", handleTouchOrPointer, { capture: true });
+    window.removeEventListener("pointerdown", handleTouchOrPointer, { capture: true });
   });
 }
