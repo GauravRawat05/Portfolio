@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { sendTelegramMessage } from "../../../services/telegramService";
 
 const name = ref("");
 const email = ref("");
@@ -17,33 +18,23 @@ const handleSubmit = async () => {
   status.value = "sending";
   errorMsg.value = "";
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: name.value.trim(),
-        email: email.value.trim(),
-        message: message.value.trim(),
-      }),
-    });
+  const result = await sendTelegramMessage({
+    type: "contact",
+    name: name.value.trim(),
+    email: email.value.trim(),
+    message: message.value.trim(),
+  });
 
-    if (res.ok) {
-      status.value = "sent";
-      name.value = "";
-      email.value = "";
-      message.value = "";
-      // Reset button back to normal after 5 seconds
-      setTimeout(() => {
-        status.value = "idle";
-      }, 5000);
-    } else {
-      const data = await res.json();
-      errorMsg.value = data.error || "Something went wrong.";
-      status.value = "error";
-    }
-  } catch {
-    errorMsg.value = "Network error. Please try again.";
+  if (result.success) {
+    status.value = "sent";
+    name.value = "";
+    email.value = "";
+    message.value = "";
+    setTimeout(() => {
+      status.value = "idle";
+    }, 5000);
+  } else {
+    errorMsg.value = result.error || "Something went wrong.";
     status.value = "error";
   }
 };

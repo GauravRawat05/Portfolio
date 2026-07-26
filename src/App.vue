@@ -14,7 +14,8 @@ import { useScroll } from "./composables/useScroll";
 import { projectVisible } from "./composables/useRouteObserver";
 import ProjectBackground from "./features/projects/components/ProjectBackground.vue";
 import { useClickSound } from "./features/sounds/composables/useClickSounds";
-//import { useHoverSound } from "./features/sounds/composables/useHoverSounds";
+import GetInTouchModal from "./components/modals/GetInTouchModal.vue";
+import StartProjectModal from "./components/modals/StartProjectModal.vue";
 
 const { isTransitioning } = useProjectTransition();
 
@@ -50,6 +51,9 @@ const { isTouch } = useAgent();
       <Project />
     </div>
   </div>
+
+  <GetInTouchModal />
+  <StartProjectModal />
 
   <Cursor v-if="!isTouch" />
 </template>

@@ -7,8 +7,10 @@ import { onMounted, onUnmounted, ref } from "vue";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ButtonRound from "../../../components/ButtonRound.vue";
 import { t } from "../../../i18n/utils/translate";
-import { social } from "../../../content/social";
 import Plus from "../../../components/icons/Plus.vue";
+import { useModalStore } from "../../../composables/useModalStore";
+
+const { openStartProject } = useModalStore();
 
 import type { ProjectPreview } from "../../../content/types";
 
@@ -79,13 +81,14 @@ onUnmounted(() => {
     </div>
   </Link>
 
-  <Link
+  <div
     v-else
     class="preview-card children-unclickable"
-    data-cursor="arrow-external"
+    data-cursor="circle-white"
     data-hoversound="hover"
-    external
-    :href="social[0].url"
+    data-sound="click"
+    @click="openStartProject"
+    style="cursor: pointer;"
   >
     <div class="preview-card-top preview-card-top-empty">
       <Plus class="preview-card-top-empty-icon" />
@@ -95,7 +98,7 @@ onUnmounted(() => {
         <h3 class="preview-card-title">{{ t("start-a-new-project") }}</h3>
       </div>
     </div>
-  </Link>
+  </div>
 </template>
 
 <style scoped lang="scss">

@@ -6,16 +6,17 @@ import { t } from "../i18n/utils/translate";
 import { useHeaderTheme } from "../composables/useHeaderTheme";
 import { lenis } from "../composables/useScroll";
 import { projectId } from "../composables/useRouteObserver";
-import { social } from "../content/social";
 import ButtonRound from "./ButtonRound.vue";
 import ArrowRight from "./icons/ArrowRight.vue";
 import SoundsToggle from "./SoundsToggle.vue";
 import { isFeatureEnabled } from "../utils/features";
 import { useRouter } from "../composables/useRouter";
 import { useFirstRoute } from "../composables/useFirstRoute";
+import { useModalStore } from "../composables/useModalStore";
 
 const router = useRouter();
 const { isFirstRoute } = useFirstRoute();
+const { openGetInTouch } = useModalStore();
 
 const scrolledPastHeroVisible = ref(false);
 const { isDarkTheme } = useHeaderTheme({
@@ -112,11 +113,10 @@ const getInTouchClassNames = computed(() => {
 
     <div class="header-right">
       <Button
-        renderAs="a"
+        renderAs="button"
         variant="accent"
         :aria-label="t('get-in-touch')"
-        :href="social.find((item) => item.name === 'mail')?.url ?? ''"
-        external
+        @click="openGetInTouch"
         :class="getInTouchClassNames"
         data-cursor="circle-white"
         data-sound="click"
