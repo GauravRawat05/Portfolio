@@ -12,6 +12,8 @@ const experiences = [
     id: "athenura",
     role: "Full Stack Developer Intern",
     company: "Athenura India • Noida Sec 62",
+    website: "https://www.athenura.in/",
+    linkedin: "https://www.linkedin.com/company/athenura",
     period: "Feb 2026 – Present",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT Auth", "REST APIs"],
     highlights: [
@@ -71,6 +73,14 @@ const toggleAthenura = () => {
             <div>
               <h3 class="exp-role">{{ exp.role }}</h3>
               <p class="exp-company">{{ exp.company }}</p>
+              <div v-if="exp.website || exp.linkedin" class="exp-company-links">
+                <a v-if="exp.website" :href="exp.website" target="_blank" rel="noopener" class="exp-link-chip" data-cursor="circle-white" data-sound="click" data-hoversound="hover">
+                  🌐 Website
+                </a>
+                <a v-if="exp.linkedin" :href="exp.linkedin" target="_blank" rel="noopener" class="exp-link-chip" data-cursor="circle-white" data-sound="click" data-hoversound="hover">
+                  💼 LinkedIn
+                </a>
+              </div>
             </div>
             
             <div class="exp-header-right">
@@ -239,6 +249,35 @@ const toggleAthenura = () => {
   color: #1e3a8a; /* Dark Navy Blue */
   font-weight: 700;
   margin-top: 2px;
+}
+
+.exp-company-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.exp-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background-color: #1e293b;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.25);
+  }
 }
 
 .exp-period {

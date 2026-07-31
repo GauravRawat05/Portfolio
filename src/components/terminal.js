@@ -56,6 +56,7 @@ Summary: Full Stack Developer Intern at Athenura contributing backend developmen
 
     experience: `
 <span class="highlight">1. Full Stack Developer Intern — Athenura India (Feb 2026 – Present)</span>
+   - Website: https://www.athenura.in/ | LinkedIn: https://www.linkedin.com/company/athenura
    - Lead Management System: REST APIs, JWT auth, MongoDB schemas (112 commits, deployed to Vercel).
    - Task Management System: 4-tier RBAC (Admin, Manager, Lead, Member) + CSV bulk user import (60 commits).
 
@@ -87,7 +88,7 @@ Summary: Full Stack Developer Intern at Athenura contributing backend developmen
 
     education: `
 <span class="highlight">Master of Computer Applications (MCA)</span> — Joint Program via IIT Patna & IIIT Ranchi (Current)
-<span class="highlight">Bachelor of Computer Applications (BCA)</span> — Maharshi Dayanand University (2023–2026)
+<span class="highlight">Bachelor of Computer Applications (BCA) (63%)</span> — Maharshi Dayanand University (2023–2026)
 <span class="highlight">Class 12th (Commerce with Maths)</span> — Jaypee Public School (74%)
     `,
 
@@ -105,7 +106,7 @@ Summary: Full Stack Developer Intern at Athenura contributing backend developmen
 
     resume: `
 <span class="highlight">Resume Download Link:</span>
-<a href="/Gaurav_Singh_Rawat_Resume.txt" download class="term-link">Click here to download Gaurav's Resume TXT</a>
+<a href="/Gaurav_Singh_Rawat_Resume.pdf" download class="term-link">Click here to download Gaurav's Resume PDF</a>
     `,
 
     'sudo hire': `

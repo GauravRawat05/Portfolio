@@ -31,7 +31,8 @@ Tools:          Git, GitHub, Docker, Vercel, Cloudflare Workers, Postman,
 EXPERIENCE
 ================================================================================
 Full Stack Developer Intern — Athenura India              Feb 2026 – Present
-Faridabad | React.js, Node.js, Express.js, MongoDB
+Website: https://www.athenura.in/ | LinkedIn: https://www.linkedin.com/company/athenura
+Noida Sec 62 / Faridabad | React.js, Node.js, Express.js, MongoDB
 
 - Lead Management System: Joined the project mid-build as backend
   developer, delivering the majority of backend logic (REST APIs, JWT auth,
@@ -91,7 +92,7 @@ EDUCATION & CERTIFICATIONS
 Master of Computer Applications (MCA) — Ongoing           Joint Program via
 IIT Patna & IIIT Ranchi
 
-Bachelor of Computer Applications (BCA)                    2023 – 2026 (Expected)
+Bachelor of Computer Applications (BCA) (63%)               2023 – 2026
 Maharshi Dayanand University, Faridabad
 
 Class 12th — Commerce with Maths (74%)                     2023

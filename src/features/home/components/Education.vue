@@ -14,8 +14,8 @@ const eduList = [
   {
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Maharshi Dayanand University, Faridabad",
-    period: "2023 – 2026 (Expected)",
-    badge: "MDU",
+    period: "2023 – 2026",
+    badge: "63%",
   },
   {
     degree: "Class 12th — Commerce with Maths",

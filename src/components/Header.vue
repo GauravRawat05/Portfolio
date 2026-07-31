@@ -85,7 +85,7 @@ const getInTouchClassNames = computed(() => {
           renderAs="a"
           variant="accent"
           aria-label="Download Resume"
-          href="/Gaurav_Singh_Rawat_Resume.txt"
+          href="/Gaurav_Singh_Rawat_Resume.pdf"
           download
           class="header-resume-btn"
           data-cursor="circle-white"

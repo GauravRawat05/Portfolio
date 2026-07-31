@@ -26,14 +26,16 @@ export const resumeData = {
     {
       degree: "Bachelor of Computer Applications (BCA)",
       institution: "Maharshi Dayanand University, Faridabad",
-      period: "2023 – 2026 (Expected)",
-      badge: "MDU"
+      period: "2023 – 2026",
+      grade: "63%",
+      badge: "63%"
     },
     {
       degree: "Class 12th — Commerce with Maths",
       institution: "Jaypee Public School, Faridabad",
       period: "2023",
-      grade: "74%"
+      grade: "74%",
+      badge: "74%"
     }
   ],
   certifications: [
@@ -48,8 +50,10 @@ export const resumeData = {
     {
       role: "Full Stack Developer Intern",
       company: "Athenura India",
+      website: "https://www.athenura.in/",
+      linkedin: "https://www.linkedin.com/company/athenura",
       period: "Feb 2026 – Present",
-      location: "Faridabad",
+      location: "Noida Sec 62 / Faridabad",
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "REST APIs"],
       highlights: [
         "Contribute backend development across live production projects.",

@@ -29,6 +29,7 @@ Location: Faridabad, Haryana
 Summary: Full Stack Developer Intern at Athenura contributing backend development across live production projects (MongoDB, Node.js, JWT). Pursuing MCA in a joint program via IIT Patna & IIIT Ranchi.`,
 
   experience: `1. Full Stack Developer Intern — Athenura India (Feb 2026 – Present)
+   - Website: https://www.athenura.in/ | LinkedIn: https://www.linkedin.com/company/athenura
    - Lead Management System: REST APIs, JWT auth, MongoDB schemas (112 commits, deployed to Vercel).
    - Task Management System: 4-tier RBAC + CSV bulk user import (60 commits).
 
@@ -54,7 +55,7 @@ AI & ML: LangGraph, Groq/Llama-3, RAG Pipelines, Sentence-Transformers
 Tools: Git, GitHub, Docker, Vercel, Cloudflare Workers, Postman`,
 
   education: `Master of Computer Applications (MCA) — Joint Program via IIT Patna & IIIT Ranchi (Current)
-Bachelor of Computer Applications (BCA) — Maharshi Dayanand University (2023–2026)
+Bachelor of Computer Applications (BCA) (63%) — Maharshi Dayanand University (2023–2026)
 Class 12th (Commerce with Maths) — Jaypee Public School (74%)`,
 
   certifications: `IBM Certified: AI-Enabled Applications for Customer Service (IBM via Credly | Mar 2026)`,
@@ -65,7 +66,7 @@ LinkedIn: linkedin.com/in/gauravsinghrawat1310
 GitHub: github.com/GauravRawat05`,
 
   resume: `Resume Download Link:
-Download Gaurav's Resume: /Gaurav_Singh_Rawat_Resume.txt`,
+Download Gaurav's Resume PDF: /Gaurav_Singh_Rawat_Resume.pdf`,
 
   "sudo hire": `ACCESS GRANTED! 🎉
 Gaurav Singh Rawat is ready for Full-Stack, Backend, & AI Developer roles.
